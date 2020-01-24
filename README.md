@@ -27,3 +27,24 @@ Create a python Program that:-
 2. GUI
 3. Machine Learning (KNN)
 4. Image Processing
+
+# Problem Statement
+
+Given a partially filled 9×9 2D array ‘grid[9][9]’, the goal is to assign digits (from 1 to 9) to the empty cells so that every row, column, and subgrid of size 3×3 contains exactly one instance of the digits from 1 to 9.
+
+## Algorithms to Solve
+1. Naive Algorithm
+The Naive Algorithm is to generate all possible configurations of numbers from 1 to 9 to fill the empty cells. Try every configuration one by one until the correct configuration is found.
+
+Time Complexity O(9^81)
+
+2. Using Backtraking
+
+1. Find row, col of an unassigned cell
+2. If there is none, return true
+3. For digits from 1 to 9
+    a) If there is no conflict for digit at row, col
+        assign digit to row, col and recursively try fill in rest of grid
+    b) If recursion successful, return true
+    c) Else, remove digit and try another
+4. If all digits have been tried and nothing worked, return false
